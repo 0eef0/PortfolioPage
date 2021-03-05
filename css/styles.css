@@ -1,0 +1,71 @@
+/* overall body changes */
+body{
+    overflow: hidden;
+}
+
+/* this is the black screen for every fade in/out */
+div#transition{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+/* this is the character */
+div#character{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: red;
+    z-index: 2;
+}
+
+/* this is the "down here" text */
+div#blinkingMessage{
+    position: absolute;
+    top: 80%;
+    width: 20%;
+    left: 40%;
+    right: 40%;
+    text-align: center;
+    z-index: 1;
+}
+
+/* This is for the WASD instruction thingy */
+div#movementInstruction{
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    width: 10%;
+    right: 80%;
+    text-align: center;
+    z-index: 1;
+}
+div#interactInstruction{
+    position: absolute;
+    top: 70%;
+    left: 80%;
+    width: 20%;
+    right: 0%;
+    text-align: center;
+    z-index: 1;
+}
+div.keyImage{
+    width: 4rem;
+    height: 4rem;
+    border: 2px black solid;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* This is the title */
+div#title{
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    text-align: center;
+}
