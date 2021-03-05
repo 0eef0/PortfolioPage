@@ -14,14 +14,16 @@
     
     <title>Home Page</title>
 </head>
-<body onload="fadeIn()">
-    <div id="transition"></div>
-    <div id="title"><h1>Welcome to my Portfolio!</h1></div>
-    <div id="character">Placeholder</div>
-    <div id="blinkingMessage">
+<body onload="$('#transition').hide()">
+    <div id="transition" class="intro"></div>
+    <div id="title" class="intro"><h1>Welcome to my Portfolio!</h1></div>
+    <div id="character">
+        <img src="images/character.PNG" width="100%">
+    </div>
+    <div id="blinkingMessage" class="intro">
         <h2>Down Here!<br>V V V</h2>
     </div>
-    <div id="movementInstruction">
+    <div id="movementInstruction" class="intro">
         <table>
             <tr>
                 <td></td>
@@ -40,7 +42,7 @@
             </tr>
         </table>
     </div>
-    <div id="interactInstruction">
+    <div id="interactInstruction" class="intro">
         <table>
             <tr>
                 <td>
