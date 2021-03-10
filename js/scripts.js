@@ -1,34 +1,39 @@
 //two below functions control the fading to and from the black screen
-function fadeIn(){
-    $('#transition').fadeTo(1500,0);
-}
-function fadeOut(){
+function goAway(){
     $('#transition').fadeTo(1500,1);
 }
+function comeBack(){
+    $('#transition').fadeTo(1500,0);
+}
+
 
 //this on keypress detects input from wasd and moves character approprately
 $(document).on("keypress", function (e) {
     console.log(e.which);
+    // the if statements inside the switch function keeps the character in bounds
     switch(true){
         case e.which == 119:
-            $('#character').css('top', `${(getPlayerY() - 5)}px`);
+            if(getPlayerY() > 0){
+                $('#character').css('top', `${(getPlayerY() - 5)}px`);
+            }
             break;
         case e.which == 97:
-            $('#character').css('left', `${(getPlayerX() - 10)}px`);
+            if(getPlayerX() > 0){
+                $('#character').css('left', `${(getPlayerX() - 10)}px`);
+            }
             break;
         case e.which == 115:
-            $('#character').css('top', `${(getPlayerY() + 5)}px`);
+            if(getPlayerY() <= (window.innerHeight - parseInt($('#character').css('height')))){
+                $('#character').css('top', `${(getPlayerY() + 5)}px`);
+            }
             break;
         case e.which == 100:
-            $('#character').css('left', `${(getPlayerX() + 10)}px`);
+            if(getPlayerX() <= (window.innerWidth - parseInt($('#character').css('width')))){
+                $('#character').css('left', `${(getPlayerX() + 10)}px`);
+            }
             break;
         case e.which == 13:
             console.log('enter');
-    }
-    if(getPlayerY() >= window.innerHeight){
-        fadeOut();
-        onIntro = false;
-        prepareAboutMe();
     }
 });
 
@@ -54,7 +59,8 @@ setInterval(blink_text, 1000);
 
 // this gets rid of the start menu items and prepares the about me page
 function prepareAboutMe(){
-    $('.intro').css('display','none');
+    $('blinkingMessage').html('');
+    $('.intro').hide();
     $('#character').css('top', '5%').css('left', '47%');
-    fadeIn();
+    comeBack();
 }

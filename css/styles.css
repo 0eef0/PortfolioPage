@@ -20,7 +20,6 @@ div#character{
     left: 49%;
     right: 49%;
     width: 2%;
-    background-color: red;
     z-index: 2;
 }
 
@@ -37,7 +36,7 @@ div#blinkingMessage{
 
 /* This is for the WASD instruction thingy */
 div#movementInstruction{
-    position: absolute;
+    position: fixed;
     top: 60%;
     left: 10%;
     width: 10%;
@@ -46,7 +45,7 @@ div#movementInstruction{
     z-index: 1;
 }
 div#interactInstruction{
-    position: absolute;
+    position: fixed;
     top: 70%;
     left: 80%;
     width: 20%;
