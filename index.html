@@ -15,14 +15,16 @@
     <title>Home Page</title>
 </head>
 <body onload="$('#transition').fadeOut(1500)">
+    <!--This is the character and its assets-->
+    <div id="character">
+        <img src="images/character_down.png" id="characterImg" width="100%">
+    </div>
+    <div id="projectile"></div>
+    
+    <!--These are the elements for the intro screen-->
     <div id="transition" class="intro"></div>
     <div id="title" class="intro"><h1>Welcome to my Portfolio!</h1></div>
-    <div id="character">
-        <img src="images/character.PNG" width="100%">
-    </div>
-    <div id="blinkingMessage" class="intro">
-        <h2>Down Here!<br>V V V</h2>
-    </div>
+    <div id="hubLoadZone" class="intro"></div>
     <div id="movementInstruction" class="intro">
         <table>
             <tr>
@@ -54,6 +56,15 @@
             </tr>
         </table>
     </div>
+
+    <!--These are the elements the main hub world-->
+    <div id="ResumeLoadZone" class="hub"></div>
+    <div id="ProjectLoadZone" class="hub"></div>
+    <div id="EmploymentLoadZone" class="hub"></div>
+
+    <!--These are the elements for the resume world-->
+    <div id="hubLoadZone" class="resume"></div>
+
 
     <div class="container">
 

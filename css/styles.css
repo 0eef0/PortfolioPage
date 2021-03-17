@@ -11,25 +11,38 @@ div#transition{
     background-color: black;
     width: 100%;
     height: 100%;
-    z-index: 3;
+    z-index: 10;
 }
 /* this is the character */
 div#character{
     position: absolute;
     top: 50%;
-    left: 49%;
-    right: 49%;
-    width: 2%;
+    left: 47.5%;
+    right: 47.5%;
+    width: 5%;
     z-index: 2;
+}
+div#projectile{
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: red;
+    z-index: 3;
 }
 
 /* this is the "down here" text */
-div#blinkingMessage{
+div#hubLoadZone{
+    background-color: red;
     position: absolute;
-    top: 80%;
-    width: 20%;
-    left: 40%;
-    right: 40%;
+    top: 92.5%;
+    height: 7.5%;
+    width: 14%;
+    left: 43%;
+    right: 43%;
     text-align: center;
     z-index: 1;
 }
@@ -69,4 +82,40 @@ div#title{
     top: 5%;
     width: 100%;
     text-align: center;
+}
+
+/* stuff below are for the hub world */
+div.hub{
+    display: none;
+}
+div#ResumeLoadZone{
+    background-color: lightgray;
+    position: absolute;
+    top: 75%;
+    height: 14%;
+    width: 5%;
+    left: 0;
+    text-align: center;
+    z-index: 1;
+}
+div#ProjectLoadZone{
+    background-color: lightgray;
+    position: absolute;
+    top: 92.5%;
+    height: 7.5%;
+    width: 14%;
+    left: 43%;
+    right: 43%;
+    text-align: center;
+    z-index: 1;
+}
+div#EmploymentLoadZone{
+    background-color: lightgray;
+    position: absolute;
+    top: 75%;
+    height: 14%;
+    width: 5%;
+    right: 0;
+    text-align: center;
+    z-index: 1;
 }
