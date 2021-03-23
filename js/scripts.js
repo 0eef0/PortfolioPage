@@ -79,8 +79,8 @@ function collision($div1, $div2) {
 //this detects if character is at entrance and enters door if they are
 function isAtDoor(){
     switch(true){
-        case collision($('#character'), $('#hubLoadZone')):
-            prepareAboutMe();
+        case collision($('#character'), $('#hubLoadZone1')):
+            prepareAboutMe('0','47.5%','down');
             break;
         case collision($('#character'), $('#ResumeLoadZone')):
             prepareResume();
@@ -90,6 +90,15 @@ function isAtDoor(){
             break;
         case collision($('#character'), $('#EmploymentLoadZone')):
             prepareEmployment();
+            break;
+        case collision($('#character'), $('#hubLoadZone2')):
+            prepareAboutMe('75%','5%','right');
+            break;
+        case collision($('#character'), $('#hubLoadZone3')):
+            prepareAboutMe('75%','90%','left');
+            break;
+        case collision($('#character'), $('#hubLoadZone4')):
+            prepareAboutMe('80%','47.5%','up');
             break;
     }
 }
@@ -115,12 +124,6 @@ function fire(){
     }
     canFire = false;
 }
-        /*
-        if(collision($('#projectile'), $('#hubLoadZone'))){
-            $('#hubLoadZone').fadeTo(1000,0);
-            console.log('hit');
-        }
-        */
 function fireDown(){
     $('#projectile').css('display','block');
     $('#projectile').css('top',(getPlayerY() + parseInt($('#character').css('height'))));
@@ -182,54 +185,83 @@ function fireLeft(){
     }, 10);
 }
 
+// this checks if a projectile is over specific elements and runs a function if there is
+setInterval(function(){
+    switch(true){
+        case collision($('#projectile'), $('#crate')):
+            $('#projectile').css('display','none');
+            $('#crate').attr('src','images/brokenCrate.png').css('opacity','0.5');
+            setTimeout(function(){
+                $('#crate').hide();
+            }, 300);
+            break;
+    }
+}, 10);
+
 // this gets rid of the start menu items and prepares the about me page
-function prepareAboutMe(){
+function prepareAboutMe(top,left,orient){
     goAway();
-    onIntro = false;
-    $('#blinkingMessage').html('');
-    $('#characterImg').attr('src','images/character_down.png');
-    $('.intro').hide();
-    $('.hub').css('display','block');
-    $('#character').css('top', '5%').css('left', '47%');
-    comeBack();
-    $('body').css("backgroundColor", 'green');
+    setTimeout(function(){
+        onIntro = false;
+        $('#blinkingMessage').html('');
+        $('#characterImg').attr('src','images/character_'+ orient + '.png');
+        $('.intro').hide();
+        $('.resume').hide();
+        $('.project').hide();
+        $('.employ').hide();
+        $('.hub').css('display','block');
+        $('#character').css('top', top).css('left', left);
+        $('body').css("backgroundColor", 'green');
+        comeBack();
+    }, 1500);
 }
 
 // this gets rid of the hub menu items and prepares the resume page
 function prepareResume(){
     goAway();
-    onIntro = false;
-    $('#blinkingMessage').html('');
-    $('#characterImg').attr('src','images/character_down.png');
-    $('.hub').hide();
-    $('.resume').css('display','block');
-    $('#character').css('top', '5%').css('left', '47%');
-    comeBack();
-    $('body').css("backgroundColor", 'red');
+    setTimeout(function(){
+        onIntro = false;
+        $('#blinkingMessage').html('');
+        $('#characterImg').attr('src','images/character_left.png');
+        $('.hub').hide();
+        $('.resume').css('display','block');
+        $('#character').css('top', '75%').css('left', '90%');
+        $('body').css("backgroundColor", 'red');
+        comeBack();
+    }, 1500);
 }
 
 // this gets rid of the hub menu items and prepares the project page
 function prepareProject(){
     goAway();
-    onIntro = false;
-    $('#blinkingMessage').html('');
-    $('#characterImg').attr('src','images/character_down.png');
-    $('.hub').hide();
-    $('.resume').css('display','block');
-    $('#character').css('top', '5%').css('left', '47%');
-    comeBack();
-    $('body').css("backgroundColor", 'blue');
+    setTimeout(function(){
+        onIntro = false;
+        $('#blinkingMessage').html('');
+        $('#characterImg').attr('src','images/character_down.png');
+        $('.hub').hide();
+        $('.project').css('display','block');
+        $('#character').css('top', '5%').css('left', '47%');
+        $('body').css("backgroundColor", 'blue');
+        comeBack();
+    }, 1500);
 }
 
 // this gets rid of the hub menu items and prepares the employment page
 function prepareEmployment(){
     goAway();
-    onIntro = false;
-    $('#blinkingMessage').html('');
-    $('#characterImg').attr('src','images/character_down.png');
-    $('.hub').hide();
-    $('.resume').css('display','block');
-    $('#character').css('top', '5%').css('left', '47%');
-    comeBack();
-    $('body').css("backgroundColor", 'grey');
+    setTimeout(function(){
+        onIntro = false;
+        $('#blinkingMessage').html('');
+        $('#characterImg').attr('src','images/character_right.png');
+        $('.hub').hide();
+        $('.employ').css('display','block');
+        $('#character').css('top', '75%').css('left', '5%');
+        $('body').css("backgroundColor", 'grey');
+        comeBack();
+    }, 1500);
+}
+
+// puts mobile controls on screen
+function touchControl(){
+    $('.control').show();
 }

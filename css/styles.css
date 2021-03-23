@@ -34,8 +34,7 @@ div#projectile{
     z-index: 3;
 }
 
-/* this is the "down here" text */
-div#hubLoadZone{
+div#hubLoadZone1{
     background-color: red;
     position: absolute;
     top: 92.5%;
@@ -47,13 +46,22 @@ div#hubLoadZone{
     z-index: 1;
 }
 
-/* This is for the WASD instruction thingy */
+/* This is for the WASD instruction thingy and other controls*/
 div#movementInstruction{
     position: fixed;
     top: 60%;
     left: 10%;
     width: 10%;
     right: 80%;
+    text-align: center;
+    z-index: 1;
+}
+div#shootInstruction{
+    position: fixed;
+    top: 70%;
+    left: 40%;
+    width: 40%;
+    right: 30%;
     text-align: center;
     z-index: 1;
 }
@@ -74,6 +82,67 @@ div.keyImage{
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+div#spaceBar{
+    width: 20rem;
+}
+div#enterKey{
+    width: 8rem;
+}
+@media screen and (max-width: 991px) {
+    div#movementInstruction{
+        position: fixed;
+        top: 65%;
+        left: 5%;
+        width: 10%;
+        right: 80%;
+        text-align: center;
+        z-index: 1;
+    }
+    div#shootInstruction{
+        position: fixed;
+        top: 70%;
+        left: 72%;
+        width: 40%;
+        right: 30%;
+        text-align: center;
+        z-index: 1;
+    }
+    div#interactInstruction{
+        position: fixed;
+        top: 75%;
+        left: 80%;
+        width: 20%;
+        right: 0%;
+        text-align: center;
+        z-index: 1;
+    }
+
+    div h3{
+        display: none;
+    }
+    div#spaceBar{
+        width: 3rem;
+    }
+    div#enterKey{
+        width: 3rem;
+    }
+    div#downButton{
+        margin-top: 3rem;
+    }
+    div#rightButton, div#leftButton{
+        margin-top: -3rem;
+    }
+    div.keyImage{
+        width: 3rem;
+        height: 3rem;
+        border: 2px grey solid;
+        background-color: rgba(170,170,170,0.5);
+        border-radius: 50%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }  
 }
 
 /* This is the title */
@@ -118,4 +187,57 @@ div#EmploymentLoadZone{
     right: 0;
     text-align: center;
     z-index: 1;
+}
+
+/* styles below are for the resume page */
+div.resume{
+    display: none;
+}
+div#hubLoadZone2{
+    background-color: lightgray;
+    position: absolute;
+    top: 75%;
+    height: 14%;
+    width: 5%;
+    left: 95%;
+    text-align: center;
+    z-index: 1;
+}
+
+/* styles below are for the employment page */
+div.employ{
+    display: none;
+}
+div#hubLoadZone3{
+    background-color: lightgray;
+    position: absolute;
+    top: 75%;
+    height: 14%;
+    width: 5%;
+    left: 0;
+    text-align: center;
+    z-index: 1;
+}
+
+/* styles below are for the project page */
+div.project{
+    display: none;
+}
+div#hubLoadZone4{
+    background-color: lightgray;
+    position: absolute;
+    top: 0;
+    height: 7.5%;
+    width: 14%;
+    left: 43%;
+    right: 43%;
+    text-align: center;
+    z-index: 1;
+}
+
+img#crate{
+    top: 20%;
+    left: 80%;
+    position: absolute;
+    width: 200px;
 }

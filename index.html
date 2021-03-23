@@ -12,11 +12,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     
-    <title>Home Page</title>
+    <title>My Portfolio!</title>
 </head>
 <body onload="$('#transition').fadeOut(1500)">
     <!--This is the character and its assets-->
     <div id="character">
+        <!--Current character sprites are placeholders-->
         <img src="images/character_down.png" id="characterImg" width="100%">
     </div>
     <div id="projectile"></div>
@@ -24,8 +25,8 @@
     <!--These are the elements for the intro screen-->
     <div id="transition" class="intro"></div>
     <div id="title" class="intro"><h1>Welcome to my Portfolio!</h1></div>
-    <div id="hubLoadZone" class="intro"></div>
-    <div id="movementInstruction" class="intro">
+    <div id="hubLoadZone1" class="intro"></div>
+    <div id="movementInstruction" class="intro control">
         <table>
             <tr>
                 <td></td>
@@ -35,20 +36,32 @@
                 <td></td>
             </tr>
             <tr>
-                <td><div class="keyImage">A</div></td>
-                <td><div class="keyImage">S</div></td>
-                <td><div class="keyImage">D</div></td>
+                <td><div class="keyImage" id="leftButton">A</div></td>
+                <td><div class="keyImage" id="downButton">S</div></td>
+                <td><div class="keyImage" id="rightButton">D</div></td>
             </tr>
             <tr>
                 <td colspan="3"><h3>To Move!</h3></td>
             </tr>
         </table>
     </div>
-    <div id="interactInstruction" class="intro">
+    <div id="shootInstruction" class="intro control">
         <table>
             <tr>
                 <td>
-                    <div class="keyImage" style="width: 8rem;">Enter</div>
+                    <div class="keyImage" id="spaceBar">Space</div>
+                </td>
+            </tr>
+            <tr>
+                <td><h3>To Fire!</h3></td>
+            </tr>
+        </table>
+    </div>
+    <div id="interactInstruction" class="intro control">
+        <table>
+            <tr>
+                <td>
+                    <div class="keyImage" id="enterKey">Enter</div>
                 </td>
             </tr>
             <tr>
@@ -63,11 +76,14 @@
     <div id="EmploymentLoadZone" class="hub"></div>
 
     <!--These are the elements for the resume world-->
-    <div id="hubLoadZone" class="resume"></div>
+    <div id="hubLoadZone2" class="resume"></div>
 
+    <!--These are the elements for the project world-->
+    <div id="hubLoadZone4" class="project"></div>
 
-    <div class="container">
+    <!--These are the elements for the employment world-->
+    <div id="hubLoadZone3" class="employ"></div>
 
-    </div>
+    <img src="images/intactCrate.jpg" id="crate">
 </body>
 </html>
