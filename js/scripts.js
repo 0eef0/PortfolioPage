@@ -15,25 +15,25 @@ $(document).on("keypress", function (e) {
         case e.which == 119:
             $('#characterImg').attr('src','images/character_up.png');
             if(getPlayerY() > 0){
-                $('#character').css('top', `${(getPlayerY() - 5)}px`);
+                $('#character').css('top', `${(getPlayerY() - 10)}px`);
             }
             break;
         case e.which == 97:
             $('#characterImg').attr('src','images/character_left.png');
             if(getPlayerX() > 0){
-                $('#character').css('left', `${(getPlayerX() - 10)}px`);
+                $('#character').css('left', `${(getPlayerX() - 15)}px`);
             }
             break;
         case e.which == 115:
             $('#characterImg').attr('src','images/character_down.png');
             if(getPlayerY() <= (window.innerHeight - parseInt($('#character').css('height')))){
-                $('#character').css('top', `${(getPlayerY() + 5)}px`);
+                $('#character').css('top', `${(getPlayerY() + 10)}px`);
             }
             break;
         case e.which == 100:
             $('#characterImg').attr('src','images/character_right.png');
             if(getPlayerX() <= (window.innerWidth - parseInt($('#character').css('width')))){
-                $('#character').css('left', `${(getPlayerX() + 10)}px`);
+                $('#character').css('left', `${(getPlayerX() + 15)}px`);
             }
             break;
         case e.which == 13:
@@ -99,6 +99,9 @@ function isAtDoor(){
             break;
         case collision($('#character'), $('#hubLoadZone4')):
             prepareAboutMe('80%','47.5%','up');
+            break;
+        case collision($('#character'), $('#github')):
+            window.location.href="https://github.com/TheCapn-MEC";
             break;
     }
 }
@@ -188,6 +191,7 @@ function fireLeft(){
 // this checks if a projectile is over specific elements and runs a function if there is
 setInterval(function(){
     switch(true){
+        /*
         case collision($('#projectile'), $('#crate')):
             $('#projectile').css('display','none');
             $('#crate').attr('src','images/brokenCrate.png').css('opacity','0.5');
@@ -195,6 +199,7 @@ setInterval(function(){
                 $('#crate').hide();
             }, 300);
             break;
+            */
     }
 }, 10);
 
