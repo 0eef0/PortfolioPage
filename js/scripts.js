@@ -9,7 +9,7 @@ function comeBack(){
 
 //this on keypress detects input from wasd and moves character approprately
 $(document).on("keypress", function (e) {
-    console.log(e.which);
+    //console.log(e.which);
     // the if statements inside the switch function keeps the character in bounds
     switch(true){
         case e.which == 119:
@@ -103,6 +103,9 @@ function isAtDoor(){
         case collision($('#character'), $('#github')):
             window.location.href="https://github.com/TheCapn-MEC";
             break;
+        case collision($('#character'), $('#tallo')):
+            window.location.href="https://app.tallo.com/profile/1243643?accessCode=d1-MB6HrukW0_GRWVXCDhX8-7wsF0lOMdYob1V11qIA";
+            break;
     }
 }
 
@@ -125,7 +128,7 @@ function fire(){
                 break;
         }
     }
-    canFire = false;
+    //canFire = false;
 }
 function fireDown(){
     $('#projectile').css('display','block');
@@ -137,8 +140,6 @@ function fireDown(){
         if(projectileY <= window.innerHeight){
             projectileY += 10;
             $('#projectile').css('top',projectileY);
-        }else{
-            canFire = true;
         }
     }, 10);
 }
@@ -152,8 +153,6 @@ function fireUp(){
         if(projectileY >= (0 - (parseInt($('#projectile').css('height'))))){
             projectileY -= 10;
             $('#projectile').css('top',projectileY);
-        }else{
-            canFire = true;
         }
     }, 10);
 }
@@ -167,8 +166,6 @@ function fireRight(){
         if(projectileX <= window.innerWidth){
             projectileX += 10;
             $('#projectile').css('left',projectileX);
-        }else{
-            canFire = true;
         }
     }, 10);
 }
@@ -182,8 +179,6 @@ function fireLeft(){
         if(projectileX >= 0 - (parseInt($('#projectile').css('width')))){
             projectileX -= 10;
             $('#projectile').css('left',projectileX);
-        }else{
-            canFire = true;
         }
     }, 10);
 }
@@ -191,15 +186,34 @@ function fireLeft(){
 // this checks if a projectile is over specific elements and runs a function if there is
 setInterval(function(){
     switch(true){
-        /*
-        case collision($('#projectile'), $('#crate')):
+        case collision($('#projectile'), $('#aboutMeCrate')):
             $('#projectile').css('display','none');
-            $('#crate').attr('src','images/brokenCrate.png').css('opacity','0.5');
+            $('#aboutMeCrate').attr('src','images/brokenCrate.png').css('opacity','0.5');
             setTimeout(function(){
-                $('#crate').hide();
+                $('#aboutMeCrate').hide();
             }, 300);
             break;
-            */
+        case collision($('#projectile'), $('#moreAboutMeCrate')):
+            $('#projectile').css('display','none');
+            $('#moreAboutMeCrate').attr('src','images/brokenCrate.png').css('opacity','0.5');
+            setTimeout(function(){
+                $('#moreAboutMeCrate').hide();
+            }, 300);
+            break;
+        case collision($('#projectile'), $('#linksCrate')):
+            $('#projectile').css('display','none');
+            $('#linksCrate').attr('src','images/brokenCrate.png').css('opacity','0.5');
+            setTimeout(function(){
+                $('#linksCrate').hide();
+            }, 300);
+            break;
+        case collision($('#projectile'), $('#skillsCrate')):
+            $('#projectile').css('display','none');
+            $('#skillsCrate').attr('src','images/brokenCrate.png').css('opacity','0.5');
+            setTimeout(function(){
+                $('#skillsCrate').hide();
+            }, 300);
+            break;
     }
 }, 10);
 
@@ -216,7 +230,7 @@ function prepareAboutMe(top,left,orient){
         $('.employ').hide();
         $('.hub').css('display','block');
         $('#character').css('top', top).css('left', left);
-        $('body').css("backgroundColor", 'green');
+        $('body').css("backgroundImage", 'url("images/grass.png")');
         comeBack();
     }, 1500);
 }
@@ -261,7 +275,7 @@ function prepareEmployment(){
         $('.hub').hide();
         $('.employ').css('display','block');
         $('#character').css('top', '75%').css('left', '5%');
-        $('body').css("backgroundColor", 'grey');
+        $('body').css("backgroundImage", 'url("images/stone.png")');
         comeBack();
     }, 1500);
 }
