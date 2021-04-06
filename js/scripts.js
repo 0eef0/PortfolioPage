@@ -4,6 +4,7 @@ function goAway(){
 }
 function comeBack(){
     $('#transition').fadeTo(1500,0);
+    touchControl();
 }
 
 
@@ -44,6 +45,54 @@ $(document).on("keypress", function (e) {
             break;
     }
 });
+
+function moveUp(){
+    up = setInterval(function(){
+        $('#characterImg').attr('src','images/character_up.png');
+        if(getPlayerX() > 0){
+            $('#character').css('top', `${(getPlayerY() - 10)}px`);
+        }
+    }, 50);
+}
+function stopMoveUp(){
+    clearInterval(up);
+}
+
+function moveLeft(){
+    left = setInterval(function(){
+        $('#characterImg').attr('src','images/character_left.png');
+        if(getPlayerY() > 0){
+            $('#character').css('left', `${(getPlayerX() - 15)}px`);
+        }
+    }, 50);
+}
+function stopMoveLeft(){
+    clearInterval(left);
+}
+
+function moveDown(){
+    down = setInterval(function(){
+        $('#characterImg').attr('src','images/character_down.png');
+        if(getPlayerY() <= (window.innerHeight - parseInt($('#character').css('height')))){
+            $('#character').css('top', `${(getPlayerY() + 10)}px`);
+        }
+    }, 50);
+}
+function stopMoveDown(){
+    clearInterval(down);
+}
+
+function moveRight(){
+    right = setInterval(function(){
+        $('#characterImg').attr('src','images/character_right.png');
+        if(getPlayerX() <= (window.innerWidth - parseInt($('#character').css('width')))){
+            $('#character').css('left', `${(getPlayerX() + 15)}px`);
+        }
+    }, 50);
+}
+function stopMoveRight(){
+    clearInterval(right);
+}
 
 //these functions get the character's current y and x values respectively
 function getPlayerY(){
@@ -113,6 +162,7 @@ function isAtDoor(){
 var canFire = true;
 function fire(){
     if(canFire){
+        $('.progressBar').css('background-color','#ff0000').fadeTo(1,0);
         switch(true){
             case $('#characterImg').attr('src') == 'images/character_down.png':
                 fireDown();
@@ -127,8 +177,21 @@ function fire(){
                 fireLeft();
                 break;
         }
+        canFire = false;
+        setTimeout(function(){
+            $('#progress1').fadeTo(500,1);
+        },500);
+        setTimeout(function(){
+            $('#progress2').fadeTo(500,1);
+        },1000);
+        setTimeout(function(){
+            $('#progress3').fadeTo(500,1);
+        },1500);
+        setTimeout(function(){
+            canFire = true;
+            $('.progressBar').css('background-color', '#00ff00');
+        },2000);
     }
-    //canFire = false;
 }
 function fireDown(){
     $('#projectile').css('display','block');
@@ -282,5 +345,7 @@ function prepareEmployment(){
 
 // puts mobile controls on screen
 function touchControl(){
-    $('.control').show();
+    if(window.innerWidth <= 991){
+        $('.control').show();
+    }
 }

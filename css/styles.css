@@ -34,6 +34,26 @@ div#projectile{
     background-color: red;
     z-index: 3;
 }
+div#projectileProgress{
+    position: absolute;
+    width: 15%;
+    left: 85%;
+    height: 5%;
+    top: 95%;
+
+    background-color: grey;
+    border: 2px black solid;
+}
+div#projectileProgress td{
+    width: 33%;
+}
+div.progressBar{
+    background-color: #00ff00;
+    border: 1px solid black;
+    width: 100%;
+    height: 80%;
+    align-self: center;
+}
 
 div#hubLoadZone1{
     background-color: red;

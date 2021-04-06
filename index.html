@@ -21,6 +21,15 @@
         <img src="images/character_down.png" id="characterImg" width="100%">
     </div>
     <div id="projectile"></div>
+    <div id="projectileProgress">
+        <table style="width: 100%; height: 100%;">
+            <tr>
+                <td><div class="progressBar" id="progress1"></div></td>
+                <td><div class="progressBar" id="progress2"></div></td>
+                <td><div class="progressBar" id="progress3"></div></td>
+            </tr>
+        </table>
+    </div>
     
     <!--These are the elements for the intro screen-->
     <div id="transition" class="intro"></div>
@@ -31,14 +40,14 @@
             <tr>
                 <td></td>
                 <td>
-                    <div class="keyImage">W</div>
+                    <div class="keyImage" onmousedown="moveUp()" onmouseup="stopMoveUp()">W</div>
                 </td>
                 <td></td>
             </tr>
             <tr>
-                <td><div class="keyImage" id="leftButton">A</div></td>
-                <td><div class="keyImage" id="downButton">S</div></td>
-                <td><div class="keyImage" id="rightButton">D</div></td>
+                <td><div class="keyImage" id="leftButton" onmousedown="moveLeft()" onmouseup="stopMoveLeft()">A</div></td>
+                <td><div class="keyImage" id="downButton" onmousedown="moveDown()" onmouseup="stopMoveDown()">S</div></td>
+                <td><div class="keyImage" id="rightButton"onmousedown="moveRight()" onmouseup="stopMoveRight()">D</div></td>
             </tr>
             <tr>
                 <td colspan="3"><h3>To Move!</h3></td>
@@ -49,7 +58,7 @@
         <table>
             <tr>
                 <td>
-                    <div class="keyImage" id="spaceBar">Space</div>
+                    <div class="keyImage" id="spaceBar" onclick="fire()">Space</div>
                 </td>
             </tr>
             <tr>
@@ -61,7 +70,7 @@
         <table>
             <tr>
                 <td>
-                    <div class="keyImage" id="enterKey">Enter</div>
+                    <div class="keyImage" id="enterKey" onclick="isAtDoor();">Enter</div>
                 </td>
             </tr>
             <tr>
@@ -112,9 +121,9 @@
     <!--These are the elements for the employment world-->
     <div id="hubLoadZone3" class="employ"></div>
 
-    <img src="images/intactCrate.jpg" id="aboutMeCrate" class="hub">
-    <img src="images/intactCrate.jpg" id="moreAboutMeCrate" class="hub">
-    <img src="images/intactCrate.jpg" id="skillsCrate" class="hub">
-    <img src="images/intactCrate.jpg" id="linksCrate" class="hub">
+    <img src="images/intactCrate.jpg" id="aboutMeCrate" class="hub crate">
+    <img src="images/intactCrate.jpg" id="moreAboutMeCrate" class="hub crate">
+    <img src="images/intactCrate.jpg" id="skillsCrate" class="hub crate">
+    <img src="images/intactCrate.jpg" id="linksCrate" class="hub crate">
 </body>
 </html>
