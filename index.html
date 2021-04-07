@@ -40,14 +40,14 @@
             <tr>
                 <td></td>
                 <td>
-                    <div class="keyImage" onmousedown="moveUp()" onmouseup="stopMoveUp()">W</div>
+                    <div class="keyImage" id="upBtn" ontouchstart="moveUp()" ontouchend="stopMoveUp()">W</div>
                 </td>
                 <td></td>
             </tr>
             <tr>
-                <td><div class="keyImage" id="leftButton" onmousedown="moveLeft()" onmouseup="stopMoveLeft()">A</div></td>
-                <td><div class="keyImage" id="downButton" onmousedown="moveDown()" onmouseup="stopMoveDown()">S</div></td>
-                <td><div class="keyImage" id="rightButton"onmousedown="moveRight()" onmouseup="stopMoveRight()">D</div></td>
+                <td><div class="keyImage" id="leftButton" ontouchstart="moveLeft()" ontouchend="stopMoveLeft()">A</div></td>
+                <td><div class="keyImage" id="downButton" ontouchstart="moveDown()" ontouchend="stopMoveDown()">S</div></td>
+                <td><div class="keyImage" id="rightButton" ontouchstart="moveRight()" ontouchend="stopMoveRight()">D</div></td>
             </tr>
             <tr>
                 <td colspan="3"><h3>To Move!</h3></td>
