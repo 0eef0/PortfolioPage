@@ -1,3 +1,12 @@
+// this controls the orientation of the screen
+setInterval(function(){
+    if(window.innerHeight > window.innerWidth){
+        $('#landscape').css('display','block');
+    }else{
+        $('#landscape').css('display','none');
+    }
+}, 100);
+
 //two below functions control the fading to and from the black screen
 function goAway(){
     $('#transition').fadeTo(1500,1);

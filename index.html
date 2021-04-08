@@ -14,7 +14,12 @@
     
     <title>My Portfolio!</title>
 </head>
-<body onload="$('#transition').fadeOut(1500)">
+<body onload="$('#transition').fadeOut(1500);">
+    <!--This is the screen that tells the user to rotate if they're on portait-->
+    <div id="landscape">
+        <h1 style="margin-top: 60%;">Please Rotate Your Device</h1>
+    </div>
+
     <!--This is the character and its assets-->
     <div id="character">
         <!--Current character sprites are placeholders-->
@@ -40,7 +45,7 @@
             <tr>
                 <td></td>
                 <td>
-                    <div class="keyImage" id="upBtn" ontouchstart="moveUp()" ontouchend="stopMoveUp()">W</div>
+                    <div class="keyImage" id="upButton" ontouchstart="moveUp()" ontouchend="stopMoveUp()">W</div>
                 </td>
                 <td></td>
             </tr>

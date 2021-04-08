@@ -3,6 +3,19 @@ body{
     overflow: hidden;
 }
 
+/* This is screen that tells user to rotate */
+div#landscape{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(150,150,150,0.9);
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    text-align: center;
+    display: flex;
+}
+
 /* this is the black screen for every fade in/out */
 div#transition{
     position: absolute;
@@ -68,6 +81,18 @@ div#hubLoadZone1{
 }
 
 /* This is for the WASD instruction thingy and other controls*/
+div.control{
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+ 
+    /*
+      Introduced in IE 10.
+      See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+    */
+    -ms-user-select: none;
+    user-select: none;
+}
 div#movementInstruction{
     position: fixed;
     top: 60%;
@@ -113,7 +138,7 @@ div#enterKey{
 @media screen and (max-width: 991px) {
     div#movementInstruction{
         position: fixed;
-        top: 65%;
+        top: 55%;
         left: 5%;
         width: 10%;
         right: 80%;
@@ -132,7 +157,7 @@ div#enterKey{
     div#interactInstruction{
         position: fixed;
         top: 75%;
-        left: 80%;
+        left: 85%;
         width: 20%;
         right: 0%;
         text-align: center;
