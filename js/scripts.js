@@ -22,25 +22,25 @@ $(document).on("keypress", function (e) {
     //console.log(e.which);
     // the if statements inside the switch function keeps the character in bounds
     switch(true){
-        case e.which == 119:
+        case e.which == 119 || e.which == 87:
             $('#characterImg').attr('src','images/character_up.png');
             if(getPlayerY() > 0){
                 $('#character').css('top', `${(getPlayerY() - 10)}px`);
             }
             break;
-        case e.which == 97:
+        case e.which == 97 || e.which == 65:
             $('#characterImg').attr('src','images/character_left.png');
             if(getPlayerX() > 0){
                 $('#character').css('left', `${(getPlayerX() - 15)}px`);
             }
             break;
-        case e.which == 115:
+        case e.which == 115 || e.which == 83:
             $('#characterImg').attr('src','images/character_down.png');
             if(getPlayerY() <= (window.innerHeight - parseInt($('#character').css('height')))){
                 $('#character').css('top', `${(getPlayerY() + 10)}px`);
             }
             break;
-        case e.which == 100:
+        case e.which == 100 || e.which == 68:
             $('#characterImg').attr('src','images/character_right.png');
             if(getPlayerX() <= (window.innerWidth - parseInt($('#character').css('width')))){
                 $('#character').css('left', `${(getPlayerX() + 15)}px`);
@@ -354,7 +354,14 @@ function prepareEmployment(){
 
 // puts mobile controls on screen
 function touchControl(){
-    if(window.innerWidth <= 991){
+    if(window.innerWidth <= 1024){
         $('.control').show();
+        $('#upButton').html('▲').css('color','white');
+        $('#leftButton').html('◄').css('color','white');
+        $('#rightButton').html('►').css('color','white');
+        $('#downButton').html('▼').css('color','white');
+        $('#spaceBar').html('Fire').css('color','white');
+        $('#enterKey').html('Enter').css('color','white');
     }
 }
+//▲►◄▼
