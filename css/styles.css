@@ -2,13 +2,23 @@
 body{
     overflow: hidden;
 }
+h4{
+    font-size: calc(0.5rem + 0.75vw);
+    padding: 0;
+    margin: 0;
+}
+p,li{
+    font-size: calc(0.25rem + 0.70vw);
+    padding: 0;
+    margin: 0;
+}
 
 /* This is screen that tells user to rotate */
 div#landscape{
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(150,150,150,0.9);
+    background-color: rgba(150,150,150,1);
     width: 100%;
     height: 100%;
     z-index: 11;
@@ -130,7 +140,7 @@ div#spaceBar{
 div#enterKey{
     width: 8rem;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1024px) {
     div#movementInstruction{
         position: fixed;
         top: 55%;
@@ -175,10 +185,11 @@ div#enterKey{
         margin-top: -3rem;
     }
     div.keyImage{
+        opacity: 0.4;
         width: 3rem;
         height: 3rem;
         border: 2px grey solid;
-        background-color: rgba(170,170,170,0.5);
+        background-color: rgba(170,170,170);
         border-radius: 50%;
         display: block;
         margin-left: auto;
@@ -284,9 +295,9 @@ div#mediaLinks{
     position: absolute;
 }
 div.mediaLink{
-    border-radius: 1rem;
+    border-radius: 1vw;
     overflow: hidden;
-    width: 4rem;
+    width: calc(0.5rem + 3vw);
     height: auto;
     text-align: center;
     display: block;
