@@ -85,11 +85,6 @@ div.control{
     -moz-user-select: -moz-none;
     -khtml-user-select: none;
     -webkit-user-select: none;
- 
-    /*
-      Introduced in IE 10.
-      See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
-    */
     -ms-user-select: none;
     user-select: none;
 }
@@ -202,6 +197,9 @@ div#title{
 /* stuff below are for the hub world */
 .hub{
     display: none;
+}
+.hub p{
+    font-size: calc();
 }
 div#ResumeLoadZone{
     background-color: lightgray;
