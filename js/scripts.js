@@ -1,3 +1,5 @@
+
+
 // this controls the orientation of the screen
 setInterval(function(){
     if(window.innerHeight > window.innerWidth){
@@ -27,11 +29,19 @@ $(document).on("keypress", function (e) {
             if(getPlayerY() > 0){
                 $('#character').css('top', `${(getPlayerY() - 10)}px`);
             }
+            $('#phoneNumber').css('display','none');
+            if($('#transition').css('opacity') == '0.5'){
+                $('#transition').fadeTo(100,0);
+            }
             break;
         case e.which == 97 || e.which == 65:
             $('#characterImg').attr('src','images/character_left.png');
             if(getPlayerX() > 0){
                 $('#character').css('left', `${(getPlayerX() - 15)}px`);
+            }
+            $('#phoneNumber').css('display','none');
+            if($('#transition').css('opacity') == '0.5'){
+                $('#transition').fadeTo(100,0);
             }
             break;
         case e.which == 115 || e.which == 83:
@@ -39,11 +49,19 @@ $(document).on("keypress", function (e) {
             if(getPlayerY() <= (window.innerHeight - parseInt($('#character').css('height')))){
                 $('#character').css('top', `${(getPlayerY() + 10)}px`);
             }
+            $('#phoneNumber').css('display','none');
+            if($('#transition').css('opacity') == '0.5'){
+                $('#transition').fadeTo(100,0);
+            }
             break;
         case e.which == 100 || e.which == 68:
             $('#characterImg').attr('src','images/character_right.png');
             if(getPlayerX() <= (window.innerWidth - parseInt($('#character').css('width')))){
                 $('#character').css('left', `${(getPlayerX() + 15)}px`);
+            }
+            $('#phoneNumber').css('display','none');
+            if($('#transition').css('opacity') == '0.5'){
+                $('#transition').fadeTo(100,0);
             }
             break;
         case e.which == 13:
@@ -56,9 +74,13 @@ $(document).on("keypress", function (e) {
 });
 
 function moveUp(){
+    $('#phoneNumber').css('display','none');
+    if($('#transition').css('opacity') == '0.5'){
+        $('#transition').fadeTo(100,0);
+    }
     up = setInterval(function(){
         $('#characterImg').attr('src','images/character_up.png');
-        if(getPlayerX() > 0){
+        if(getPlayerY() > 0){
             $('#character').css('top', `${(getPlayerY() - 10)}px`);
         }
     }, 50);
@@ -68,9 +90,13 @@ function stopMoveUp(){
 }
 
 function moveLeft(){
+    $('#phoneNumber').css('display','none');
+    if($('#transition').css('opacity') == '0.5'){
+        $('#transition').fadeTo(100,0);
+    }
     left = setInterval(function(){
         $('#characterImg').attr('src','images/character_left.png');
-        if(getPlayerY() > 0){
+        if(getPlayerX() > 0){
             $('#character').css('left', `${(getPlayerX() - 15)}px`);
         }
     }, 50);
@@ -80,6 +106,10 @@ function stopMoveLeft(){
 }
 
 function moveDown(){
+    $('#phoneNumber').css('display','none');
+    if($('#transition').css('opacity') == '0.5'){
+        $('#transition').fadeTo(100,0);
+    }
     down = setInterval(function(){
         $('#characterImg').attr('src','images/character_down.png');
         if(getPlayerY() <= (window.innerHeight - parseInt($('#character').css('height')))){
@@ -92,6 +122,10 @@ function stopMoveDown(){
 }
 
 function moveRight(){
+    $('#phoneNumber').css('display','none');
+    if($('#transition').css('opacity') == '0.5'){
+        $('#transition').fadeTo(100,0);
+    }
     right = setInterval(function(){
         $('#characterImg').attr('src','images/character_right.png');
         if(getPlayerX() <= (window.innerWidth - parseInt($('#character').css('width')))){
@@ -163,6 +197,13 @@ function isAtDoor(){
             break;
         case collision($('#character'), $('#tallo')):
             window.location.href="https://app.tallo.com/profile/1243643?accessCode=d1-MB6HrukW0_GRWVXCDhX8-7wsF0lOMdYob1V11qIA";
+            break;
+        case collision($('#character'), $('#email')):
+            window.location.href="mailto:ethanryanroldan@gmail.com";
+            break;
+        case collision($('#character'), $('#phone')):
+            $('#phoneNumber').css('display','block');
+            $('#transition').fadeTo(100,0.5);
             break;
     }
 }
@@ -293,8 +334,6 @@ setInterval(function(){
 function prepareAboutMe(top,left,orient){
     goAway();
     setTimeout(function(){
-        onIntro = false;
-        $('#blinkingMessage').html('');
         $('#characterImg').attr('src','images/character_'+ orient + '.png');
         $('.intro').hide();
         $('.resume').hide();
@@ -302,6 +341,7 @@ function prepareAboutMe(top,left,orient){
         $('.employ').hide();
         $('.hub').css('display','block');
         $('#character').css('top', top).css('left', left);
+        $('.crate').attr('src','images/intactCrate.jpg').css('opacity','1');
         $('body').css("backgroundImage", 'url("images/grass.png")');
         comeBack();
     }, 1500);
@@ -311,8 +351,6 @@ function prepareAboutMe(top,left,orient){
 function prepareResume(){
     goAway();
     setTimeout(function(){
-        onIntro = false;
-        $('#blinkingMessage').html('');
         $('#characterImg').attr('src','images/character_left.png');
         $('.hub').hide();
         $('.resume').css('display','block');
@@ -326,8 +364,6 @@ function prepareResume(){
 function prepareProject(){
     goAway();
     setTimeout(function(){
-        onIntro = false;
-        $('#blinkingMessage').html('');
         $('#characterImg').attr('src','images/character_down.png');
         $('.hub').hide();
         $('.project').css('display','block');
@@ -341,8 +377,6 @@ function prepareProject(){
 function prepareEmployment(){
     goAway();
     setTimeout(function(){
-        onIntro = false;
-        $('#blinkingMessage').html('');
         $('#characterImg').attr('src','images/character_right.png');
         $('.hub').hide();
         $('.employ').css('display','block');
@@ -354,14 +388,14 @@ function prepareEmployment(){
 
 // puts mobile controls on screen
 function touchControl(){
-    if(window.innerWidth <= 1024){
+    if(window.innerWidth <= 1025){
         $('.control').show();
-        $('#upButton').html('▲').css('color','white');
-        $('#leftButton').html('◄').css('color','white');
-        $('#rightButton').html('►').css('color','white');
-        $('#downButton').html('▼').css('color','white');
-        $('#spaceBar').html('Fire').css('color','white');
-        $('#enterKey').html('Enter').css('color','white');
+        $('#upButton').html('<h1>▲</h1>');
+        $('#leftButton').html('<h1>◄</h1>');
+        $('#rightButton').html('<h1>►</h1>');
+        $('#downButton').html('<h1>▼</h1>');
+        $('#spaceBar').html('Fire');
+        $('#enterKey').html('Enter');
     }
 }
 //▲►◄▼
