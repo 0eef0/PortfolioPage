@@ -20,8 +20,18 @@ function comeBack(){
 
 
 //this on keypress detects input from wasd and moves character approprately
+var walkCycle = 0;
 $(document).on("keypress", function (e) {
     //console.log(e.which);
+
+    if(walkCycle >= 20){
+        $('#character').css('transform','rotate(20deg)');
+        walkCycle = 0;
+    }else if(walkCycle >= 10){
+        $('#character').css('transform','rotate(-20deg)');
+    }
+    
+
     // the if statements inside the switch function keeps the character in bounds
     switch(true){
         case e.which == 119 || e.which == 87:
@@ -71,6 +81,7 @@ $(document).on("keypress", function (e) {
             fire();
             break;
     }
+    walkCycle++;
 });
 
 function moveUp(){
