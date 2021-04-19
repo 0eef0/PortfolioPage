@@ -14,7 +14,7 @@
     
     <title>My Portfolio!</title>
 </head>
-<body onload="$('#transition').fadeOut(1500); touchControl();">
+<body onload="$('#transition').fadeOut(1500); touchControl();" onkeyup="$('#character').css('transform','rotate(0deg)'); walkCycle = 0;">
     <!--This is the screen that tells the user to rotate if they're on portait-->
     <div id="landscape">
         <h1 style="margin-top: 60%;">Please Rotate Your Device</h1>
@@ -124,19 +124,158 @@
             <li><p>Has actual experience developing with a team</p></li>
         </ul>
     </div>
-
-    <!--These are the elements for the resume world-->
-    <div id="hubLoadZone2" class="resume"></div>
-
-    <!--These are the elements for the project world-->
-    <div id="hubLoadZone4" class="project"></div>
-
-    <!--These are the elements for the employment world-->
-    <div id="hubLoadZone3" class="employ"></div>
-
     <img src="images/intactCrate.jpg" id="aboutMeCrate" class="hub crate">
     <img src="images/intactCrate.jpg" id="moreAboutMeCrate" class="hub crate">
     <img src="images/intactCrate.jpg" id="skillsCrate" class="hub crate">
     <img src="images/intactCrate.jpg" id="linksCrate" class="hub crate">
+
+    <!--These are the elements for the resume world-->
+    <div id="hubLoadZone2" class="resume"></div>
+    <div id="resumePage1" class="resume">
+        <h4>Skills:</h4>
+        <p>
+            Excellent time management skills, Very determined work ethic, able to get things done when they need to be done, Able to adapt to change relatively quickly, Fairly detail-oriented, Communicates with others at a competent level, Able to type at around a 50-60 wpm consistently, Good technological skills
+        </p>
+        <h4 style="margin-top: 1vw;">Experiences</h4>
+        <ul>
+            <li style="display: inline-block;">
+                <p>West-MEC Coding Student</p>
+                <ul>
+                    <li><p>Learning basic web development and problem-solving skills</p></li>
+                    <li><p>Learning professional workplace practices</p></li>
+                </ul>
+            </li>
+            <li style="display: inline-block;">
+                <p>FBLA Member/Officer</p>
+                <ul>
+                    <li><p>Acting as Chapter Treasurer</p></li>
+                    <li><p>Leads general chapter meetings</p></li>
+                </ul>
+            </li>
+            <li style="display: inline-block;">
+                <p>Website Enterprise Team Developer</p>
+                <ul>
+                    <li><p>Learning how to work effectively in a team</p></li>
+                    <li><p>Real world work experience</p></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="resumePage2" class="resume">
+        <h4>Education</h4>
+        <ul>
+            <li>Attends Mountain Ridge High School</li>
+            <ul>
+                <li>3.96 unweighted GPA</li>
+                <li>4.46 weighted GPA</li>
+                <li>Graduating in May 2022</li>
+            </ul>
+        </ul>
+        <h4>Awards</h4>
+        <ul>
+            <li>FBLA Graphic Design Regionals - Third Place</li>
+            <li>FBLA Graphic Design State - Finalist</li>
+        </ul>
+    </div>
+
+    <!--These are the elements for the project world-->
+    <div id="hubLoadZone4" class="project"></div>
+
+    <div id="project1" class="project">
+        <table style="width: 100%; text-align: center;">
+            <tr style="width: 100%;">
+                <td>
+                    <img src="images/wiiSiteThumbnail.PNG" width="100%" height="auto" id="wiiSiteThumbnail">
+                </td>
+                <td style="width: 50%;">
+                    <h4>Nintendo Wii Site</h4>
+                    <p><strong>By:</strong> Me, Andrew Makris, Ethan Vesely</p>
+                    <p><strong>Demontrates:</strong> Bootstrap application, teamwork, creativity with layouts</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="project2" class="project">
+        <table style="width: 100%; text-align: center;">
+            <tr style="width: 100%;">
+                <td>
+                    <img src="images/trashSiteThumbnail.png" width="100%" height="auto" id="trashSiteThumbnail">
+                </td>
+                <td style="width: 50%;">
+                    <h4>Treasure Divers Site</h4>
+                    <p><strong>By:</strong> Me</p>
+                    <p><strong>Demontrates:</strong> Shop Creation, logo design, color palettes</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="project3" class="project">
+        <table style="width: 100%; text-align: center;">
+            <tr style="width: 100%;">
+                <td>
+                    <img src="images/attorneyThumbnail.png" width="100%" height="auto" id="attorneyThumbnail">
+                </td>
+                <td style="width: 50%;">
+                    <h4>Ace Attorney Site</h4>
+                    <p><strong>By:</strong> Me</p>
+                    <p><strong>Demontrates:</strong> Form Design, Sound Application, editing webpages with JS</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="project4" class="project">
+        <table style="width: 100%; text-align: center;">
+            <tr style="width: 100%;">
+                <td>
+                    <img src="images/washThumbnail.png" width="100%" height="auto" id="washThumbnail">
+                </td>
+                <td style="width: 50%;">
+                    <h4>Car Wash Site</h4>
+                    <p><strong>By:</strong> Me, Princeton Jeffries</p>
+                    <p><strong>Demontrates:</strong> Form Design, Teamwork, Logo Design</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="project5" class="project">
+        <table style="width: 100%; text-align: center;">
+            <tr style="width: 100%;">
+                <td>
+                    <img src="images/socialThumbnail.png" width="100%" height="auto" id="socialThumbnail">
+                </td>
+                <td style="width: 50%;">
+                    <h4>Mock Social Media Site</h4>
+                    <p><strong>By:</strong> Me</p>
+                    <p><strong>Demontrates:</strong> Bootstrap application, color palettes, bootstrap layouts</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="project6" class="project">
+        <table style="width: 100%; text-align: center;">
+            <tr style="width: 100%;">
+                <td>
+                    Thumbnail
+                </td>
+                <td style="width: 50%;">
+                    Details
+                </td>
+            </tr>
+        </table>
+    </div>
+    <p id="projectInstruction" class="project">*Enter on the thumbnails to visit sites!<br>**Will update these sites in the future</p>
+
+    <!--These are the elements for the employment world-->
+    <div id="hubLoadZone3" class="employ"></div>
+    <img src="images/employmentHistory.png" id="web" class="employ">
+
+    <img src="images/employmentSign.png" id="sign" class="employ">
+    <p id="signText" class="employ">So...umm...yea...I got nothing in terms of employment</p>
+
+    <img src="images/employmentSign.png" id="sign2" class="employ">
+    <p id="signText2" class="employ">I've volunteered for Vitalant and am part of the Website Enterprise Team at West-MEC Northeast Campus</p>
+
+    <img src="images/employmentSign.png" id="sign3" class="employ">
+    <p id="signText3" class="employ">But that's literally it...<br>But I will update this page when there is more to put on it!</p>
 </body>
 </html>

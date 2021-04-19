@@ -1,6 +1,10 @@
 /* overall body changes */
 body{
     overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none; 
+    user-select: none;  
 }
 h4{
     font-size: calc(0.5rem + 0.75vw);
@@ -355,6 +359,38 @@ div#hubLoadZone2{
     z-index: 1;
 }
 
+div.resume h4{
+    font-size: calc(0.4rem + 0.9vw);
+    padding: 0;
+    margin: 0;
+}
+div.resume p,li{
+    font-size: calc(0.03rem + 0.9vw);
+    padding: 0;
+    margin: 0;
+}
+div#resumePage1{
+    position: absolute;
+    width: 90%;
+    height: 30%;
+    top: 10%;
+    left: 5%;
+    background-color: #A6D564;
+    border: #5C1916 4px ridge;
+    padding: 1vw;
+}
+div#resumePage2{
+    position: absolute;
+    width: 20%;
+    height: 51%;
+    top: 39%;
+    left: 5%;
+    background-color: #A6D564;
+    border: #5C1916 4px ridge;
+    border-top: none;
+    padding: 1vw;
+}
+
 /* styles below are for the employment page */
 div.employ{
     display: none;
@@ -368,6 +404,65 @@ div#hubLoadZone3{
     left: 0;
     text-align: center;
     z-index: 1;
+}
+img#web{
+    position: absolute;
+    display: none;
+    filter: invert(1);
+    top: -10px;
+    left: -10px;
+    width: 30%;
+}
+
+img#sign{
+    position: absolute;
+    display: none;
+    width: 20%;
+    left: 10%;
+    top: 30%;
+    filter: brightness(50%);
+}
+p#signText{
+    position: absolute;
+    width: 15%;
+    left: 12.5%;
+    top: 38%;
+    color: white;
+    text-align: center;
+}
+
+img#sign2{
+    position: absolute;
+    display: none;
+    width: 20%;
+    left: 40%;
+    top: 30%;
+    filter: brightness(50%);
+}
+p#signText2{
+    position: absolute;
+    width: 15%;
+    left: 42.5%;
+    top: 38%;
+    color: white;
+    text-align: center;
+}
+
+img#sign3{
+    position: absolute;
+    display: none;
+    width: 20%;
+    left: 70%;
+    top: 30%;
+    filter: brightness(50%);
+}
+p#signText3{
+    position: absolute;
+    width: 15%;
+    left: 72.5%;
+    top: 38%;
+    color: white;
+    text-align: center;
 }
 
 /* styles below are for the project page */
@@ -384,4 +479,84 @@ div#hubLoadZone4{
     right: 43%;
     text-align: center;
     z-index: 1;
+}
+
+div.project h4{
+    font-size: calc(0.2rem + 0.75vw);
+    padding: 0;
+    margin: 0;
+}
+div.project p{
+    font-size: calc(0.005rem + 0.8vw);
+    padding: 0;
+    margin: 0;
+}
+div#project1{
+    background-color: #A6D564;
+    position: absolute;
+    width: 30%;
+    top: 10%;
+    left: 5%;
+    height: 20%;
+    padding: 1vw;
+    border: #5C1916 4px ridge;
+}
+div#project2{
+    background-color: #A6D564;
+    position: absolute;
+    width: 30%;
+    top: 10%;
+    left: 65%;
+    height: 20%;
+    padding: 1vw;
+    border: #5C1916 4px ridge;
+}
+div#project3{
+    background-color: #A6D564;
+    position: absolute;
+    width: 30%;
+    top: 40%;
+    left: 5%;
+    height: 20%;
+    padding: 1vw;
+    border: #5C1916 4px ridge;
+}
+div#project4{
+    background-color: #A6D564;
+    position: absolute;
+    width: 30%;
+    top: 40%;
+    left: 65%;
+    height: 20%;
+    padding: 1vw;
+    border: #5C1916 4px ridge;
+}
+div#project5{
+    background-color: #A6D564;
+    position: absolute;
+    width: 30%;
+    top: 70%;
+    left: 5%;
+    height: 20%;
+    padding: 1vw;
+    border: #5C1916 4px ridge;
+}
+div#project6{
+    background-color: #A6D564;
+    position: absolute;
+    width: 30%;
+    top: 70%;
+    left: 65%;
+    height: 20%;
+    padding: 1vw;
+    border: #5C1916 4px ridge;
+}
+p#projectInstruction{
+    display: none;
+    color: #5C1916;
+    position: absolute;
+    width: 100%;
+    top: 90%;
+    height: 10%;
+    text-align: center;
 }

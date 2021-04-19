@@ -24,10 +24,10 @@ var walkCycle = 0;
 $(document).on("keypress", function (e) {
     //console.log(e.which);
 
-    if(walkCycle >= 20){
+    if(walkCycle >= 20 && (e.which == 119 || e.which == 87 || e.which == 97 || e.which == 65 || e.which == 115 || e.which == 83 || e.which == 100 || e.which == 68)){
         $('#character').css('transform','rotate(20deg)');
         walkCycle = 0;
-    }else if(walkCycle >= 10){
+    }else if(walkCycle >= 10 && (e.which == 119 || e.which == 87 || e.which == 97 || e.which == 65 || e.which == 115 || e.which == 83 || e.which == 100 || e.which == 68)){
         $('#character').css('transform','rotate(-20deg)');
     }
     
@@ -79,6 +79,7 @@ $(document).on("keypress", function (e) {
             break;
         case e.which == 39 || e.which == 32:
             fire();
+            $('#character').css('transform','rotate(0deg)');
             break;
     }
     walkCycle++;
@@ -94,10 +95,18 @@ function moveUp(){
         if(getPlayerY() > 0){
             $('#character').css('top', `${(getPlayerY() - 10)}px`);
         }
+        if(walkCycle >= 20){
+            $('#character').css('transform','rotate(20deg)');
+            walkCycle = 0;
+        }else if(walkCycle >= 10){
+            $('#character').css('transform','rotate(-20deg)');
+        }
+        walkCycle++;
     }, 50);
 }
 function stopMoveUp(){
     clearInterval(up);
+    $('#character').css('transform','rotate(0deg)');
 }
 
 function moveLeft(){
@@ -110,10 +119,18 @@ function moveLeft(){
         if(getPlayerX() > 0){
             $('#character').css('left', `${(getPlayerX() - 15)}px`);
         }
+        if(walkCycle >= 20){
+            $('#character').css('transform','rotate(20deg)');
+            walkCycle = 0;
+        }else if(walkCycle >= 10){
+            $('#character').css('transform','rotate(-20deg)');
+        }
+        walkCycle++;
     }, 50);
 }
 function stopMoveLeft(){
     clearInterval(left);
+    $('#character').css('transform','rotate(0deg)');
 }
 
 function moveDown(){
@@ -126,10 +143,18 @@ function moveDown(){
         if(getPlayerY() <= (window.innerHeight - parseInt($('#character').css('height')))){
             $('#character').css('top', `${(getPlayerY() + 10)}px`);
         }
+        if(walkCycle >= 20){
+            $('#character').css('transform','rotate(20deg)');
+            walkCycle = 0;
+        }else if(walkCycle >= 10){
+            $('#character').css('transform','rotate(-20deg)');
+        }
+        walkCycle++;
     }, 50);
 }
 function stopMoveDown(){
     clearInterval(down);
+    $('#character').css('transform','rotate(0deg)');
 }
 
 function moveRight(){
@@ -142,10 +167,18 @@ function moveRight(){
         if(getPlayerX() <= (window.innerWidth - parseInt($('#character').css('width')))){
             $('#character').css('left', `${(getPlayerX() + 15)}px`);
         }
+        if(walkCycle >= 20){
+            $('#character').css('transform','rotate(20deg)');
+            walkCycle = 0;
+        }else if(walkCycle >= 10){
+            $('#character').css('transform','rotate(-20deg)');
+        }
+        walkCycle++;
     }, 50);
 }
 function stopMoveRight(){
     clearInterval(right);
+    $('#character').css('transform','rotate(0deg)');
 }
 
 //these functions get the character's current y and x values respectively
@@ -216,6 +249,26 @@ function isAtDoor(){
             $('#phoneNumber').css('display','block');
             $('#transition').fadeTo(100,0.5);
             break;
+        case collision($('#character'), $('#wiiSiteThumbnail')):
+            window.location.href="https://amakris12.github.io/Group-bootstrap/index.html";
+            break;
+        case collision($('#character'), $('#trashSiteThumbnail')):
+            window.location.href="https://thecapn-mec.github.io/BrandedSite/";
+            break;
+        case collision($('#character'), $('#attorneyThumbnail')):
+            window.location.href="https://thecapn-mec.github.io/Galley_Website_Add-on_Project/";
+            break;
+        case collision($('#character'), $('#washThumbnail')):
+            window.location.href="https://princetonjeffries.github.io/businessDesign/";
+            break;
+        case collision($('#character'), $('#socialThumbnail')):
+            window.location.href="https://thecapn-mec.github.io/bootstrapProfilePage/";
+            break;
+            /*
+        case collision($('#character'), $('#trashSiteThumbnail')):
+            window.location.href="https://thecapn-mec.github.io/BrandedSite/";
+            break;
+            */
     }
 }
 
