@@ -45,11 +45,10 @@ div#transition{
 div#character{
     position: absolute;
     top: 50%;
-    left: 47.5%;
-    right: 47.5%;
-    width: 5%;
+    left: 48.5%;
+    right: 48.5%;
+    width: 3%;
     z-index: 2;
-    border: 2px black solid;
 }
 div#projectile{
     position: absolute;
@@ -84,7 +83,7 @@ div.progressBar{
 }
 
 div#hubLoadZone1{
-    background-color: red;
+    background-color: rgba(150,150,150,0.5);
     position: absolute;
     top: 92.5%;
     height: 7.5%;
@@ -220,7 +219,7 @@ div#title{
     font-size: calc();
 }
 div#ResumeLoadZone{
-    background-color: lightgray;
+    background-color: rgba(150,150,150,0.5);;
     position: absolute;
     top: 75%;
     height: 14%;
@@ -230,7 +229,7 @@ div#ResumeLoadZone{
     z-index: 1;
 }
 div#ProjectLoadZone{
-    background-color: lightgray;
+    background-color: rgba(150,150,150,0.5);;
     position: absolute;
     top: 92.5%;
     height: 7.5%;
@@ -241,7 +240,7 @@ div#ProjectLoadZone{
     z-index: 1;
 }
 div#EmploymentLoadZone{
-    background-color: lightgray;
+    background-color: rgba(150,150,150,0.5);;
     position: absolute;
     top: 75%;
     height: 14%;
@@ -349,7 +348,7 @@ div.resume{
     display: none;
 }
 div#hubLoadZone2{
-    background-color: lightgray;
+    background-color: rgba(150,150,150,0.5);;
     position: absolute;
     top: 75%;
     height: 14%;
@@ -396,7 +395,7 @@ div.employ{
     display: none;
 }
 div#hubLoadZone3{
-    background-color: lightgray;
+    background-color: rgba(150,150,150,0.5);;
     position: absolute;
     top: 75%;
     height: 14%;
@@ -470,7 +469,7 @@ div.project{
     display: none;
 }
 div#hubLoadZone4{
-    background-color: lightgray;
+    background-color: rgba(150,150,150,0.5);;
     position: absolute;
     top: 0;
     height: 7.5%;
