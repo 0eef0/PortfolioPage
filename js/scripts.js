@@ -1,5 +1,3 @@
-
-
 // this controls the orientation of the screen
 setInterval(function(){
     if(window.innerHeight > window.innerWidth){
@@ -249,19 +247,19 @@ function isAtDoor(){
             $('#phoneNumber').css('display','block');
             $('#transition').fadeTo(100,0.5);
             break;
-        case collision($('#character'), $('#wiiSiteThumbnail')):
+        case collision($('#character'), $('#project1')):
             window.location.href="https://amakris12.github.io/Group-bootstrap/index.html";
             break;
-        case collision($('#character'), $('#trashSiteThumbnail')):
+        case collision($('#character'), $('#project2')):
             window.location.href="https://thecapn-mec.github.io/BrandedSite/";
             break;
-        case collision($('#character'), $('#attorneyThumbnail')):
+        case collision($('#character'), $('#project3')):
             window.location.href="https://thecapn-mec.github.io/Galley_Website_Add-on_Project/";
             break;
-        case collision($('#character'), $('#washThumbnail')):
+        case collision($('#character'), $('#project4')):
             window.location.href="https://princetonjeffries.github.io/businessDesign/";
             break;
-        case collision($('#character'), $('#socialThumbnail')):
+        case collision($('#character'), $('#project5')):
             window.location.href="https://thecapn-mec.github.io/bootstrapProfilePage/";
             break;
             /*
@@ -391,6 +389,48 @@ setInterval(function(){
                 $('#skillsCrate').hide();
             }, 300);
             break;
+        case collision($('#projectile'), $('#projectOneCrate')):
+            $('#projectile').css('display','none');
+            $('#projectOneCrate').attr('src','images/brokenCrate.png').css('opacity','0.5');
+            setTimeout(function(){
+                $('#projectOneCrate').hide();
+            }, 300);
+            break;
+        case collision($('#projectile'), $('#projectTwoCrate')):
+            $('#projectile').css('display','none');
+            $('#projectTwoCrate').attr('src','images/brokenCrate.png').css('opacity','0.5');
+            setTimeout(function(){
+                $('#projectTwoCrate').hide();
+            }, 300);
+            break;
+        case collision($('#projectile'), $('#projectThreeCrate')):
+            $('#projectile').css('display','none');
+            $('#projectThreeCrate').attr('src','images/brokenCrate.png').css('opacity','0.5');
+            setTimeout(function(){
+                $('#projectThreeCrate').hide();
+            }, 300);
+            break;
+        case collision($('#projectile'), $('#projectFourCrate')):
+            $('#projectile').css('display','none');
+            $('#projectFourCrate').attr('src','images/brokenCrate.png').css('opacity','0.5');
+            setTimeout(function(){
+                $('#projectFourCrate').hide();
+            }, 300);
+            break;
+        case collision($('#projectile'), $('#projectFiveCrate')):
+            $('#projectile').css('display','none');
+            $('#projectFiveCrate').attr('src','images/brokenCrate.png').css('opacity','0.5');
+            setTimeout(function(){
+                $('#projectFiveCrate').hide();
+            }, 300);
+            break;
+        case collision($('#projectile'), $('#projectSixCrate')):
+            $('#projectile').css('display','none');
+            $('#projectSixCrate').attr('src','images/brokenCrate.png').css('opacity','0.5');
+            setTimeout(function(){
+                $('#projectSixCrate').hide();
+            }, 300);
+            break;
     }
 }, 10);
 
@@ -433,6 +473,7 @@ function prepareProject(){
         $('.project').css('display','block');
         $('#character').css('top', '5%').css('left', '47%');
         $('body').css("backgroundColor", 'blue');
+        $('.crate').attr('src','images/intactCrate.jpg').css('opacity','1');
         comeBack();
     }, 1500);
 }

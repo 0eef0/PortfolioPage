@@ -389,6 +389,25 @@ div#resumePage2{
     border-top: none;
     padding: 1vw;
 }
+img#statue{
+    width: 15%;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    filter: contrast(10%);
+}
+div#mrhsStatuePedistal{
+    position: absolute;
+    background-color: rgb(130,130,130);
+    width: 15%;
+    height: 10%;
+    left: 30%;
+    top: 68%;
+    border-radius: 100% 100% 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* styles below are for the employment page */
 div.employ{
@@ -465,7 +484,7 @@ p#signText3{
 }
 
 /* styles below are for the project page */
-div.project{
+.project{
     display: none;
 }
 div#hubLoadZone4{
@@ -500,6 +519,13 @@ div#project1{
     padding: 1vw;
     border: #5C1916 4px ridge;
 }
+img#projectOneCrate{
+    position: absolute;
+    width: 30%;
+    top: 10%;
+    left: 5%;
+    height: 20%;
+}
 div#project2{
     background-color: #A6D564;
     position: absolute;
@@ -509,6 +535,13 @@ div#project2{
     height: 20%;
     padding: 1vw;
     border: #5C1916 4px ridge;
+}
+img#projectTwoCrate{
+    position: absolute;
+    width: 30%;
+    top: 10%;
+    left: 65%;
+    height: 20%;
 }
 div#project3{
     background-color: #A6D564;
@@ -520,6 +553,13 @@ div#project3{
     padding: 1vw;
     border: #5C1916 4px ridge;
 }
+img#projectThreeCrate{
+    position: absolute;
+    width: 30%;
+    top: 40%;
+    left: 5%;
+    height: 20%;
+}
 div#project4{
     background-color: #A6D564;
     position: absolute;
@@ -529,6 +569,13 @@ div#project4{
     height: 20%;
     padding: 1vw;
     border: #5C1916 4px ridge;
+}
+img#projectFourCrate{
+    position: absolute;
+    width: 30%;
+    top: 40%;
+    left: 65%;
+    height: 20%;
 }
 div#project5{
     background-color: #A6D564;
@@ -540,6 +587,13 @@ div#project5{
     padding: 1vw;
     border: #5C1916 4px ridge;
 }
+img#projectFiveCrate{
+    position: absolute;
+    width: 30%;
+    top: 70%;
+    left: 5%;
+    height: 20%;
+}
 div#project6{
     background-color: #A6D564;
     position: absolute;
@@ -549,6 +603,13 @@ div#project6{
     height: 20%;
     padding: 1vw;
     border: #5C1916 4px ridge;
+}
+img#projectSixCrate{
+    position: absolute;
+    width: 30%;
+    top: 70%;
+    left: 65%;
+    height: 20%;
 }
 p#projectInstruction{
     display: none;
