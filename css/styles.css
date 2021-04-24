@@ -219,7 +219,12 @@ div#title{
     font-size: calc();
 }
 .load{
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #5C1916;
+}
+.load h4{
+    font-size: calc(0.2rem + 0.75vw);
 }
 div#ResumeLoadZone{
     background-color: rgba(150,150,150,0.5);;

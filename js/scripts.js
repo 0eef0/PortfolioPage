@@ -444,6 +444,7 @@ function prepareAboutMe(top,left,orient){
         $('.project').hide();
         $('.employ').hide();
         $('.hub').css('display','block');
+        $('.load').css('display', 'flex');
         $('#character').css('top', top).css('left', left);
         $('.crate').attr('src','images/intactCrate.jpg').css('opacity','1');
         $('body').css("backgroundImage", 'url("images/grass.png")');
