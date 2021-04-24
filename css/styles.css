@@ -218,6 +218,9 @@ div#title{
 .hub p{
     font-size: calc();
 }
+.load{
+    text-align: center;
+}
 div#ResumeLoadZone{
     background-color: rgba(150,150,150,0.5);;
     position: absolute;
@@ -402,6 +405,25 @@ div#mrhsStatuePedistal{
     width: 15%;
     height: 10%;
     left: 30%;
+    top: 68%;
+    border-radius: 100% 100% 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img#statue2{
+    width: 12%;
+    position: absolute;
+    top: 48%;
+    left: 61.5%;
+    filter: contrast(10%);
+}
+div#mecStatuePedistal{
+    position: absolute;
+    background-color: rgb(130,130,130);
+    width: 15%;
+    height: 10%;
+    left: 60%;
     top: 68%;
     border-radius: 100% 100% 0 0;
     display: flex;
